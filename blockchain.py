@@ -95,7 +95,8 @@ def get_chain():
 # Checking if the Blockchain is valid
 @app.route('/check-chain-valid', methods=['GET'])
 def check_chain_valid():
-    pass 
+    response = {'is-chain-valid': blockchain.is_chain_valid(blockchain.chain)}
+    return jsonify(response), 200
 
 # Running the app
 app.run(host='0.0.0.0', port=5000)
